@@ -11,11 +11,13 @@
           <div class="row">
               <div class="col-md-4">
                   <div>
-                      <h3>Syarat Pendaftaran</h3>
+                      <h3>Syarat pendaftaran :</h3>
                       <ol>
-                          <li>syarat 1</li>
-                          <li>syarat 2</li>
-                          <li>syatat 3</li>
+                          <li>Mengisi formulir</li>
+                          <li>Menyerahkan fotocopy ijazah dan SKHUN legalisir (Mts/SMP) sederajat</li>
+                          <li>Menyerahkan fotocopy KK dan Akte Kelahiran&nbsp;</li>
+                          <li>Menyerahkan fotocopy KIP ( bagi yg punya )</li>
+                          <li>Pas foto 3x4 = 4 lembar</li>
                       </ol>
                       <p>
                           syarat di upload dalam bentuk Zip
