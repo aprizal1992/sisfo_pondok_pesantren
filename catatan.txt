@@ -1,0 +1,8 @@
+tambah laporan / bulan dan pertahun  // ok
+stok buku
+cek nama dinas
+keternagn buku saat di klik  
+cek denda
+pencarian buku nama pengarang dll // ok
+pagination buku // ok
+add wilayah saatdaftar / ok
