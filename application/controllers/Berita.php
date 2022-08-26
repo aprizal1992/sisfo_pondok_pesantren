@@ -26,4 +26,21 @@ class Berita extends CI_Controller
         ];
         $this->load->view('Router/route', $data);
     }
+    public function delete($id)
+    {
+        $deleted = $this->db->delete(
+            "berita",
+            [
+                "id" => $id
+            ]
+        );
+
+        if ($deleted) {
+            $this->session->set_flashdata('success', 'Data Berhasil dihapus');
+            redirect('Berita/index');
+        } else {
+            $this->session->set_flashdata('error', 'Data Gagal dihapus');
+            redirect('Berita/index');
+        }
+    }
 }
