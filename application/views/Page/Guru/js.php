@@ -32,6 +32,7 @@
     // edit
     $('.edit').click(function() {
         var id = $(this).data('id');
+        console.log(id)
         const get_guru = async () => {
             const getter = await axios.get(`<?= base_url() ?>axios/guruById/${id}`).catch(err => {
                 console.log(err);
@@ -53,5 +54,33 @@
             $('#id_guru').val(data.id_guru);
         };
         get_guru();
+    });
+
+    $(".delete").click(function() {
+        var key = $(this).data("id");
+        swal({
+            title: "Apakah anda yakin?",
+            text: "Data akan dihapus!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                const DeleteSiswa = async () => {
+                    const getter = await axios.delete(`<?= base_url() ?>axios/delete_guru/${key}`).catch(err => {
+                        console.log(err);
+                    });
+                    if (getter?.status ?? 400 == 200) {
+                        swal("Data berhasil dihapus!", {
+                            icon: "success",
+                        });
+                        location.reload();
+                    }
+                };
+                DeleteSiswa();
+            } else {
+                swal("Data batal dihapus!");
+            }
+        });
     });
 </script>

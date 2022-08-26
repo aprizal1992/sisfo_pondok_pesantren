@@ -109,4 +109,22 @@ class Sisfo extends CI_Controller
             redirect("Sisfo/form_pendaftaran");
         }
     }
+    public function berita_detail($id_berita)
+    {
+        $getBerita = $this->db->get_where("berita", ["id" => $id_berita])->row_array();
+        $data = [
+            "path" => "berita_detail",
+            "berita" => $getBerita,
+        ];
+        $this->load->view('Router/website', $data);
+    }
+    public function media_detail($id_media)
+    {
+        $getBerita = $this->db->get_where("media", ["id" => $id_media])->row_array();
+        $data = [
+            "path" => "media_detail",
+            "media" => $getBerita,
+        ];
+        $this->load->view('Router/website', $data);
+    }
 }

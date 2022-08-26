@@ -29,12 +29,12 @@ class Axios extends CI_Controller
     }
     public function deleteSiswa($id)
     {
-        $this->db->delete('siswa', ['id' => $id]);
+        $this->db->delete('siswa', ['nis' => $id]);
         echo json_encode(['status' => 'success']);
     }
     public function guruById($id)
     {
-        $guru = $this->db->get_where("guru")->row_array();
+        $guru = $this->db->get_where("guru", ["id_guru" => $id])->row_array();
         echo json_encode($guru);
     }
     public function updateInstansi()
@@ -148,10 +148,10 @@ class Axios extends CI_Controller
     {
         $del = $this->db->delete('media', ['id' => $id]);
         if ($del) {
-            $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
+            $this->session->set_flashdata('success', 'Data Berhasil dihapus');
             redirect('Media/index');
         } else {
-            $this->session->set_flashdata('error', 'Data Gagal Disimpan');
+            $this->session->set_flashdata('error', 'Data Gagal dihapus');
             redirect('Media/index');
         }
     }
@@ -164,5 +164,19 @@ class Axios extends CI_Controller
         $this->db->where("pendaftaran.id", $id);
         $getPendaftaran = $this->db->get_where("pendaftaran")->row_array();
         echo json_encode($getPendaftaran);
+    }
+    public function delete_guru($id_guru)
+    {
+        $del = $this->db->delete("guru", [
+            "id_guru" => $id_guru
+        ]);
+
+        if ($del) {
+            $this->session->set_flashdata('success', 'Data Berhasil dihapus');
+            redirect('Guru/index');
+        } else {
+            $this->session->set_flashdata('error', 'Data Gagal dihapus');
+            redirect('Guru/index');
+        }
     }
 }

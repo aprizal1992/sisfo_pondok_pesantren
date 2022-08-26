@@ -30,7 +30,7 @@
                           <div>
                               <small style="font-size: .6em"><?= tgl_i($m['tanggal']) ?></small>
                           </div>
-                          <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                          <a class="btn-slide mt-2" href="<?= base_url("Sisfo/media_detail/" . $m["id"]) ?>"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
                       </div>
                   </div>
               <?php endforeach ?>
