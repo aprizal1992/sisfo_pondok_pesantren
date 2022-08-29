@@ -92,7 +92,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">NIS</label>
-                                    <input type="text" class="form-control" name="nis" id="nis" placeholder="Nis Siswa">
+                                    <input type="text" class="form-control" name="nis" id="nis" placeholder="Nis Siswa" require>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -172,7 +172,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Kelas</label>
-                                    <select name="kelas" id="kelas" class="form-control">
+                                    <select name="kelas" id="kelas" class="form-control" require>
                                         <option value="">Pilih Kelas</option>
                                         <?php foreach ($kelas as $value) : ?>
                                             <option value="<?= $value['id'] ?>"><?= $value['kelas'] ?></option>
